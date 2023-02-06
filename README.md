@@ -25,6 +25,7 @@
 3.1.1.2 [Обновление списка процессов](#update_list_of_processes)  
 3.1.1.3 [Сортировка списка процессов и поиск по названию](#sort_list_of_processes)  
 3.1.1.4 [Завершение выполнения процесса](#crash_process)
+
 3.1.2 [Ограничения и исключения](#restrictions_and_exclusions)  
 3.2 [Нефункциональные требования](#non-functional_requirements)  
 3.2.1 [Атрибуты качества](#quality_attributes)  
