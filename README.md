@@ -25,6 +25,7 @@
 3.1.1.2 [Обновление списка процессов](#update_list_of_processes)  
 3.1.1.3 [Сортировка списка процессов и поиск по названию](#sort_list_of_processes)  
 3.1.1.4 [Завершение выполнения процесса](#crash_process)
+
 3.1.2 [Ограничения и исключения](#restrictions_and_exclusions)  
 3.2 [Нефункциональные требования](#non-functional_requirements)  
 3.2.1 [Атрибуты качества](#quality_attributes)  
@@ -32,8 +33,11 @@
 3.2.2 [Внешние интерфейсы](#external_interfaces)  
 3.2.3 [Ограничения](#restrictions)  
 3.3 [Расширение функционала приложения](#extensions)
+
 3.3.1 [Выбор темы](#extensions_dark_mode)
+
 3.3.2 [Ограничение доступа к завершению выполнения процесса](#extensions_restrictions)
+
 3.3.3 [Сохранение списка процессов и загруженности системы в файл](#extensions_save_to_file)
 
 <a name="intro"/>
