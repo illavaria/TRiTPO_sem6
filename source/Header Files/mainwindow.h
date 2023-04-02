@@ -26,16 +26,16 @@ namespace Ui {
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow                                           //класс, отвечающий за отображение всей собранной информации
 {
     Q_OBJECT
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void load_process_into_label();
-    void loadSystemInfo();
-    void updateSystemInformation();
+    void load_process_into_label();                                            //метод загрузки вектора с процессами в таблицу
+    void loadSystemInfo();                                                     //метод загрузки системной информации
+    void updateSystemInformation();                                            //метод актуализации системной информации
 
 private slots:
     void on_comboBox_currentTextChanged(const QString &arg1);
@@ -45,11 +45,11 @@ private slots:
 
 
 private:
-    std :: vector<QLabel*> pids_label_vector;
-    std :: vector<QLabel*> threads_label_vector;
-    std :: vector<QLabel*> memory_label_vector;
-    std :: vector<QLabel*> user_label_vector;
-    std :: vector<QLabel*> name_label_vectorl;
+    std :: vector<QLabel*> pids_label_vector;                                   //вектор для отображения системных идентификаторов
+    std :: vector<QLabel*> threads_label_vector;                                //вектор для отображения количества потоков
+    std :: vector<QLabel*> memory_label_vector;                                 //вектор для отображения потребляемой памяти
+    std :: vector<QLabel*> user_label_vector;                                   //вектор отображения имен пользователей
+    std :: vector<QLabel*> name_label_vectorl;                                  //вектор отображения имен процессов                            
     std :: vector<QLabel*> cpuLabels;
     std :: vector<QProgressBar*> cpus;
 
