@@ -38,10 +38,10 @@ public:
     void updateSystemInformation();                                            //метод актуализации системной информации
 
 private slots:
-    void on_comboBox_currentTextChanged(const QString &arg1);
-    void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_3_clicked();
+    void on_comboBox_currentTextChanged(const QString &arg1);                 //описание работы выпадающего меню
+    void on_pushButton_clicked();                                             //метод, описывающий работу кнопки обновления информации
+    void on_pushButton_2_clicked();                                           //метод, описывающий работу функции поиска процесса
+    void on_pushButton_3_clicked();                                           //метод, описывающий работу функции удаления процесса
 
 
 private:
