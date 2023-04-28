@@ -125,28 +125,6 @@ void MainWindow :: on_pushButton_clicked() {
     load_process_into_label();
 }
 
-void MainWindow :: on_pushButton_3_clicked(){
-    int pid;
-    pid = ui -> lineEdit -> text().toInt();
-    if (pid == 0){
-        QMessageBox messageBox;
-        messageBox.critical(0, "Error", "Danger attempt");
-        messageBox.setFixedSize(1000, 300);
-        ui->lineEdit->clear();
-        return;
-    }
-    int returnSig = deleteProcess(pid);
-    if (returnSig == -1){
-        QMessageBox messageBox;
-        messageBox.critical(0, "Error", "Error in killing process");
-        messageBox.setFixedSize(1000, 300);
-        ui->lineEdit->clear();
-        return;
-    }
-    load_process_into_label();
-    ui -> lineEdit -> clear();
-}
-
 void MainWindow :: on_pushButton_2_clicked() {
     std :: string name = "";
     name = ui -> lineEdit -> text().toStdString();
@@ -187,6 +165,43 @@ void MainWindow :: on_pushButton_2_clicked() {
         ui -> tableWidget -> setItem(i, 4, userItem);
     }
 }
+
+void MainWindow :: on_pushButton_3_clicked(){
+    int pid;
+    pid = ui -> lineEdit -> text().toInt();
+    if (pid == 0){
+        QMessageBox messageBox;
+        messageBox.critical(0, "Error", "Danger attempt");
+        messageBox.setFixedSize(1000, 300);
+        ui->lineEdit->clear();
+        return;
+    }
+    int returnSig = deleteProcess(pid);
+    if (returnSig == -1){
+        QMessageBox messageBox;
+        messageBox.critical(0, "Error", "Error in killing process");
+        messageBox.setFixedSize(1000, 300);
+        ui->lineEdit->clear();
+        return;
+    }
+    load_process_into_label();
+    ui -> lineEdit -> clear();
+}
+
+void MainWindow :: on_pushButton_4_clicked(){
+    processVectorTreatment foundVector;
+    foundVector.setProcessVector(processVectorTreatment.findByName(name));
+    std::ofstream out;
+    out.open(information.txt);
+    if(out.is_open){
+        for(int i = 0; i < foundVector.getProcessVector().size(); i++){
+            out << foundVector.getProcessVector()[i].getPid() << "|" << foundVector.getProcessVector()[i].getProcessName() << "|" <<
+               foundVector.getProcessVector()[i].getMemory() << | << foundVector.getProcessVector()[i].getThreads();
+        }
+    }
+}
+
+
 
 void MainWindow :: updateSystemInformation() {
     systemInfo.updateInfo();
