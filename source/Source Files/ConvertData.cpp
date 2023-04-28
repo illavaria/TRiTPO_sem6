@@ -75,13 +75,15 @@ string ConvertData ::convertMemory(int data) {
 }
 
 string ConvertData ::systemCall(const char *command) {
-    array<char, 128> buf;
-    string  call;
-    shared_ptr <FILE> pipe(popen(command, "r"), pclose);
+    array<char, 128> buf;                                           //создание буфера
+    string  call;                                                   //создание строки для возврата
+    shared_ptr <FILE> pipe(popen(command, "r"), pclose);            //создание однонаправленного канала на чтение, в который будет помещена информация выведенная
+                                                                    //системным вызовом command
     if (!pipe) {
         throw runtime_error("Error in systemCall");
     }
-    while (!feof(pipe.get())) {
+    while (!feof(pipe.get())) {                                     //пока в канале есть данные, они помещаются порциями по 128 байт в буфер, а затем
+                                                                    //добавляются в строку call
         if(fgets(buf.data(), 128, pipe.get()) != NULL) {
             call += buf.data();
         }
