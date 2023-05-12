@@ -1,3 +1,99 @@
+/*ProcessesInfo Class
+Header: #include<ProcessesInfo.h>
+Properties:
+commandLine: string                              
+processName: string                              
+user: string                                         
+threads: int                                    
+pid: int                                          
+memory: int                                          
+cpuPercent: double    
+
+
+Public Functions
+                        ProcessesInfo()
+                        ProcessesInfo(int pid)
+                        ~ProcessesInfo();
+string                  processNameRecovery()
+string                  userRecovery()
+string                  commandLineRecovery()
+int                     memoryRecovery()
+int                     threadsRecovery()
+void                    infoOutput() 
+
+
+Member Type Documentation
+
+commandLine::string
+-------------------------------------------
+Поле содержит команду, с помощью которой был запущен процесс
+
+processName::string
+-------------------------------------------
+Поле содержит имя процесса
+
+user::string
+-------------------------------------------
+Поле содержит имя пользователя, запустившего процесс
+
+threads::int
+-------------------------------------------
+Поле количество дочерних потоков процесса
+
+pid::int
+-------------------------------------------
+Поле содержит parend id процесса
+
+memory::int
+-------------------------------------------
+Поле содержит объем памяти, занимаемый процессом
+
+cpuPercent::double
+-------------------------------------------
+Поле содержит процент занимаемых ресурсов процессора
+
+
+Member Function Documentation
+
+ProcessesInfo::ProcessesInfo()
+-------------------------------------------
+Конструктор создает объект типа ProcessesInfo с пустыми полями
+
+ProcessesInfo::ProcessesInfo(int pid)
+-------------------------------------------
+Конструктор создает объект типа ProcessesInfo и при помощи pid процесса, который передается в конструктор заполняет его поля информацией,
+которую получает при помощи методов threadsRecovery(), memoryRecovery(), commandLineRecovery(), userRecovery(), processNameRecovery() 
+
+ProcessesInfo::~ProcessesInfo()
+-------------------------------------------
+Деструктор для уничтожения объекта типа ProcessesInfo
+
+string ProcessesInfo::processNameRecovery()
+-------------------------------------------
+Метод, используя значение поля pid, получает имя процесса и заносит его в поле processName
+
+string ProcessesInfo::userRecovery()
+-------------------------------------------
+Метод, используя значение поля pid, получает имя пользователя запустившего процесс и заносит его в поле user
+
+string ProcessesInfo::commandLineRecovery()
+-------------------------------------------
+Метод, используя значение поля pid, получает команду, при помощи которой, 
+был запущен процесс и заносит его в поле commandLine
+
+int ProcessesInfo::memoryRecovery()
+-------------------------------------------
+Метод, используя значение поля pid, получает объем памяти, потребляемой процессом, и заносит его в поле memory
+
+int ProcessesInfo::threadsRecovery()
+-------------------------------------------
+Метод, используя значение поля pid, получает количество дочерних потоков процесс и заносит его в поле threads
+
+void ProcessesInfo::infoOutput()
+-------------------------------------------
+Метод выводит значения всех полей процесса
+*/
+
 #ifndef PROCESSESINFO_H
 #define PROCESSESINFO_H
 #include <iostream>
