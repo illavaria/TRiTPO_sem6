@@ -1,7 +1,5 @@
 #include "ConvertData.h"
 
-ConvertData :: ConvertData() {}
-
 string ConvertData :: itoa(int data) {
     string buf;
     int divider = 1;
