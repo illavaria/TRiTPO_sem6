@@ -26,6 +26,15 @@ bool                    threadsComparator(ProcessesInfo obj1, ProcessesInfo obj2
 bool                    memoryComparator (ProcessesInfo obj1, ProcessesInfo obj2)       friend
 
 
+Member Type Documentation
+
+processVector:vector<ProcessesInfo>
+-------------------------------------------
+Поле содержит вектор объектов типа ProcessesInfo
+
+
+Member Function Documentation
+
 ProcessVectorTreatment::ProcessVectorTreatment()
 -------------------------------------------
 Метод создает объект типа ProcessVectorTreatment и заполняет поле vector<ProcessInfo> processVector
