@@ -1,6 +1,9 @@
 /*ProcessVectorTreatment Class
 Header: #include<ProcessVectorTreatment.h>
 
+Properties:
+processVector: vector<ProcessesInfo>
+
 Public Functions
                         ProcessVectorTreatment()
 void                    update_information()
