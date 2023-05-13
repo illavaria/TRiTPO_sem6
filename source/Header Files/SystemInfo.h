@@ -1,3 +1,82 @@
+/*SystemInfo Class
+Header: #include<SystemInfo.h>
+Properties:
+model: string                                                                   
+coresNumber: int                                    
+totalRAM: int                                          
+totalRAMUsage: int                                          
+cpuUsage: vector<int>  
+
+
+Public Functions
+                        SystemInfo()
+string                  modelRecovery()
+int                     coresNumberRecovery()
+int                     totalRamRecovery()
+int                     totalRamUsageRecovery()
+vector<int>             cpuUsageRecovery()
+void                    updateInfo()
+void                    outputInfo() 
+
+
+Member Type Documentation
+
+model:string
+-------------------------------------------
+Поле содержит наименование модели процессора
+
+coresNumber:int
+-------------------------------------------
+Поле содержит количество ядер процессора
+
+totalRAM:int
+-------------------------------------------
+Поле общий объем оперативной памяти
+
+totalRAMUsage:int
+-------------------------------------------
+Поле содержит объем памяти, занимаемый процессором
+
+cpuUsage:vector<int>
+-------------------------------------------
+Поле содержит вектор занимаемых ресурсов каждого ядра процессора
+
+
+Member Function Documentation
+
+SystemInfo::SystemInfo()
+-------------------------------------------
+Конструктор создает объект типа SystemInfo и заполняет его поля информацией,
+которую получает при помощи методов modelRecovery(), coresNumberRecovery(), totalRamRecovery(), totalRamUsageRecovery(), cpuUsageRecovery() 
+
+int SystemInfo::modelRecovery()
+-------------------------------------------
+Метод наименование процессора и заносит его в поле model
+
+int SystemInfo::coresNumberRecovery()
+-------------------------------------------
+Метод получает количество ядер процессора и заносит его в поле coresNumber
+
+int SystemInfo::totalRamRecovery()
+-------------------------------------------
+Метод получает общий объем оперативной памяти и заносит его в поле totalRAM
+
+int SystemInfo::totalRamUsageRecovery()
+-------------------------------------------
+Метод получает занимаемый процессором объем оперативной памяти и заносит его в поле totalRAMUsage
+
+vector<int> SystemInfo::cpuUsageRecovery()
+-------------------------------------------
+Метод получает процент занимаемых ресурсов каждого ядра процессора и заносит его в поле cpuUsage
+
+void SystemInfo::updateInfo()
+-------------------------------------------
+Метод актуализирует значения всех полей объекта
+
+void SystemInfo::infoOutput()
+-------------------------------------------
+Метод выводит значения всех полей объекта
+*/
 #ifndef SYSTEMINFO_H
 #define SYSTEMINFO_H
 #include "ProcessVectorTreatment.h"
